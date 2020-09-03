@@ -1,0 +1,640 @@
+/*---------------------------------------------------------
+#Import de Fontes
+---------------------------------------------------------*/
+@import url('https://fonts.googleapis.com/css2?family=Concert+One&display=swap');
+
+body{
+    --color-primary: #0e0504;
+    --bg-primary: #17181d;
+    --bg-secundary: #292c35;
+    --browm: #593131;
+    --browm-dark: #1b0b07;
+    --charcoal: #373737;
+    --text-primary: #fff;
+    --text-secundary: #17181d;
+
+    background: var(--color-primary);
+    color: var(--text-primary);
+}
+
+html{
+    /* Mudar o scrollbar no Mozilla */
+    scrollbar-color: #593131 #0e0504;
+    scrollbar-width: thin;
+}
+
+/* Mudar o scrollbar no Chrome (webkit) */
+body::-webkit-scrollbar{
+    width: 1rem;
+    background: var(--color-primary);
+    border-radius: 0 0.8rem 0.8rem 0;
+}
+
+body::-webkit-scrollbar-thumb{
+    background: var(--browm);
+    border-radius: 0 0.8rem 0.8rem 0;
+}
+
+/* ---------------------------------------------------------
+#HEADER 
+ --------------------------------------------------------- */
+header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    position: fixed;
+    top: 0;
+    left:0; 
+
+    width: 100%;
+    height: 10rem;
+    padding: 1rem 10rem;
+    background: transparent;
+    z-index: 9999;
+
+    color: var(--text-primary);
+
+    transition: 0.5s ease;
+}
+
+header.sticky{
+    height: 7rem;
+    background-color: rgba(14,5,4,0.7);
+    color: var(--text-primary);
+    box-shadow: 0 0.2rem 0.5rem rgba(255,255,255,0.03);
+}
+
+#header .logo h1{
+    text-transform: uppercase;
+    letter-spacing: 0.3rem;
+}
+
+#header .menu{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+
+    width: 10%;
+    cursor: pointer;
+}
+
+#header .menu h2{
+    letter-spacing: 0.5rem;
+    font-weight: 400;
+    text-transform: uppercase;
+}
+
+#header .menu i{
+    font-size: 1.8rem;
+}
+
+/* ---------------------------------------------------------
+#HEADER MENU OPEN 
+ --------------------------------------------------------- */
+#header .navigation{
+    display: none;
+    transition: all 0.4s ease;
+}
+
+#header .navigation.on{
+    position: absolute;
+    top: 8rem;
+    right: 2rem;
+    z-index: 10;
+
+    height: 70vh;
+    width: 30vw;
+
+    background: rgba(14, 5, 4 , .95);
+
+    border-radius: 1rem;
+
+    box-shadow: 0.1rem 0.1rem 0.5rem rgba(14,5,4,0.5);
+
+    animation: menu 0.5s ease-in forwards;
+}
+
+#header .navigation.on nav{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+#header .navigation.on nav i{
+    position: absolute;
+    top: 3rem;
+    right: 4rem;
+    cursor: pointer;
+    font-size: 2rem;
+    color: var(--text-primary);
+    font-weight: 700;
+}
+
+#header .navigation.on nav ul{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+#header .navigation.on nav ul li{
+    position: relative;
+
+    font-size: 2rem;
+    letter-spacing: 0.8rem;
+    font-weight: lighter;
+
+    border-left: 0.5rem solid var(--browm);
+    padding: 0.8rem;
+
+    transition: 0.2s ease;
+}
+
+#header .navigation.on nav ul li:hover{
+    transform: scale(1.1);
+    font-weight: 900;
+}
+
+#header .navigation.on nav ul li::after{
+    position: absolute;
+    content: '';
+    left: -0.3rem;
+    bottom: 0;
+
+    width: 0%;
+    height: 100%;
+    background: var(--browm);
+    
+    z-index: -1;
+
+    transition: 0.3s ease;
+}
+
+#header .navigation.on nav ul li:hover::after{
+    width: 100%;
+}
+
+@keyframes menu {
+    from{
+        opacity: 0.3;
+        transform: translateX(+25%);
+    }
+    to{
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+}
+
+/*---------------------------------------------------------
+#SECCTION HERO 
+---------------------------------------------------------*/
+#hero{
+    height: 100vh;
+    background: url(../assets/img/banner.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+#hero .banner{
+    position: absolute;
+    top: 30%;
+    left: 10%;
+
+    height: 100%;
+    width: 100%;
+}
+
+#hero .banner h2{
+    font-size: 3.6rem;
+    font-weight: lighter;
+    text-transform: uppercase;
+    letter-spacing: 1.5rem;
+}
+
+#hero .banner h2 span{
+    font-size: 1.5em;
+    font-weight: 900;
+    letter-spacing: 1.2rem;
+}
+
+#hero .banner a{
+    display: inline-block;
+
+    font-size: 1.6rem;
+    letter-spacing: 0.2rem;
+    text-transform: uppercase;
+
+    background: var(--browm);
+    box-shadow: 0.1rem 0.1rem 0.3rem rgba(14,5,4,0.4);
+    
+    padding: 1.5rem 2rem;
+    margin: 2rem 0;
+    border-radius: 2.3rem;
+
+    transition: 0.3s ease;
+}
+
+#hero .banner a:hover{
+    transform: scale(1.025);
+}
+
+/*---------------------------------------------------------
+# Social Icons
+--------------------------------------------------------- */
+#sci{
+    position: fixed;
+    top: 50%;
+    right: 1.5rem;
+    transform: translateY(-50%);
+    z-index: 99;
+
+    background: linear-gradient(to bottom, rgba(14,5,4,0.4) 10%,rgba(89,49,49, 0.5) 50%, rgba(14,5,4,0.4) 100%);
+    box-shadow: 0.3rem 0.8rem 0.5rem rgba(14,5,4,0.5);
+
+    padding: 1rem;
+    border-radius: 2rem;
+}
+
+#sci ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#sci ul li a{
+    display: inline-block;
+    margin: 1rem 0;
+    transition: 0.3s ease;
+}
+
+#sci ul li a i{
+    font-size: 2rem;
+    color: var(--text-primary);
+}
+
+#sci ul li a:hover{
+    transform: scale(1.2);
+}
+
+/*--------------------------------------------------------------
+# Back to top button
+--------------------------------------------------------------*/
+.back-to-top {
+    position: fixed;
+    display: none;
+    right: 15px;
+    bottom: 15px;
+    z-index: 99999;
+}
+.back-to-top i {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    width: 4rem;
+    height: 4rem;
+    border-radius: 0.4rem;
+    background: var(--browm);
+    color: var(--text-primary);
+    transition: all 0.4s;
+}
+.back-to-top i:hover {
+    opacity: 0.8;
+    color: var(--text-primary);
+}
+
+/*---------------------------------------------------------
+#SECCTION-TITLE
+---------------------------------------------------------*/
+
+section .section-title{
+    position: relative;
+    display: block;
+
+    margin: 12rem 0 0;
+    font-size: 3.2rem;
+    font-family: 'Concert One', cursive;
+    font-weight: 500;
+
+    filter: drop-shadow(0 0.2rem 0.5rem rgba(0,0,0,0.2));
+
+    text-transform: uppercase;
+}
+
+section .section-title::after{
+    display: inline-block;
+    position: absolute;
+    top: -1rem;
+    right: -2rem;
+
+    content: "\f0c4";
+    font-family: 'Font Awesome\ 5 Free';
+    font-size: 2.5rem;
+    font-weight: 900;
+
+    transform: scale(-1, 1) rotate(30deg);
+}
+
+/*---------------------------------------------------------
+#SECCTION CONTATOS 
+---------------------------------------------------------*/
+#contatos{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 5rem;
+}
+
+#contatos .contatos-container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+
+    width: 100%;
+}
+
+#contatos .contatos-container .contatos-description{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+#contatos .contatos-container .contatos-description div{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    
+    padding: 1rem;
+    margin: 2rem;
+
+    font-size: 2rem;
+}
+
+#contatos .contatos-container .contatos-description div i{
+    margin-right: 2rem;
+}
+
+#contatos .contatos-container .map iframe{
+    filter: grayscale(1) brightness(0.9) invert(1);
+    border-radius: 0.5rem;
+    outline: none;
+    box-shadow: 0.1rem 0.2rem 0.5rem rgba(255,255,255, 0.8),
+                -0.1rem -0.2rem 0.5rem rgba(255,255,255, 0.8)
+    ;
+}
+
+/*---------------------------------------------------------
+#SECCTION WELCOME 
+---------------------------------------------------------*/
+#welcome{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+
+    
+    background: linear-gradient(to bottom, rgba(89,49,49, 0.65) 8%,
+    rgba(89,49,49, 0.38) 50%,rgba(89,49,49, 0.4) 60%, rgba(89,49,49, 0.65) 100%);
+
+    box-shadow: 1rem 1rem 0.5rem 1rem rgba(0,0,0, 0.05) inset,
+                -1rem -1rem 0.5rem 1rem rgba(0,0,0, 0.05) inset;
+}
+
+#welcome .welcome-container{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: flex-start;
+
+    padding: 5rem 1rem;
+}
+
+#welcome .welcome-container img{
+    width: 50rem;
+    height: auto;
+
+    box-shadow: 0.8rem 0.8rem 0.5rem rgba(0,0,0, 0.5);
+
+    filter: contrast(1.05);
+}
+
+#welcome .welcome-container .welcome-description{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 30%;
+
+    padding: 5rem 2rem;
+}
+
+#welcome .welcome-container .welcome-description p{
+    word-wrap: break-word;
+    font-size: 1.6rem;
+}
+
+/*---------------------------------------------------------
+#SECCTION ABOUT 
+---------------------------------------------------------*/
+#about{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+#about .about-container{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: flex-start;
+
+    padding: 5rem 1rem;
+}
+
+#about .about-container img{
+    width: 50rem;
+    height: auto;
+
+    box-shadow: 0.8rem 0.8rem 0.5rem rgba(0,0,0, 0.5);
+
+    filter: contrast(1.05);
+}
+
+#about .about-container .about-description{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 30%;
+
+    padding: 5rem 2rem;
+}
+
+#about .about-container .about-description p{
+    word-wrap: break-word;
+    font-size: 1.6rem;
+}
+
+/*---------------------------------------------------------
+#SECCTION SERVICES 
+---------------------------------------------------------*/
+#services{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+
+    
+    background: linear-gradient(to bottom, rgba(89,49,49, 0.65) 8%,
+    rgba(89,49,49, 0.38) 50%,rgba(89,49,49, 0.4) 60%, rgba(89,49,49, 0.65) 100%);
+
+    box-shadow: 1rem 1rem 0.5rem 1rem rgba(0,0,0, 0.05) inset,
+                -1rem -1rem 0.5rem 1rem rgba(0,0,0, 0.05) inset;
+}
+
+#services .services-container{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: flex-start;
+
+    padding: 5rem 1rem;
+}
+
+#services .services-container img{
+    width: 50rem;
+    height: auto;
+
+    box-shadow: 0.8rem 0.8rem 0.5rem rgba(0,0,0, 0.5);
+
+    filter: contrast(1.05);
+}
+
+#services .services-container .services-description{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 30%;
+
+    padding: 5rem 2rem;
+}
+
+#services .services-container .services-description p{
+    word-wrap: break-word;
+    font-size: 1.6rem;
+}
+
+/*---------------------------------------------------------
+#FOOTER
+---------------------------------------------------------*/
+#footer{
+    width: 100%;
+    height: 4rem;
+    background: #000;
+    color: var(--text-primary);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#footer h1{
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+/*---------------------------------------------------------
+#RESPONSIVIDADE
+---------------------------------------------------------*/
+
+section .imagem{
+    max-width: 50%;
+}
+
+section div,
+section div div{
+    height: 100%;
+}
+
+section div .map{
+    max-width: 60%;
+    height: auto;
+}
+/*---------------------------------------------------------
+#MEDIA QUERIES
+---------------------------------------------------------*/
+@media (max-width: 992px) {
+    :root{
+        font-size: 50%;
+    }
+
+    section .imagem{
+        max-width: 30%;
+    }
+}
+
+@media (max-width: 670px) {
+    :root{
+        font-size: 45%;
+    }
+
+    section div[class*="container"]{
+        display: flex;
+        width: 90%;
+        padding-top: 0 !important;
+        justify-content: center !important;
+        align-items: center !important;
+        flex-direction: column !important;
+    }
+    section div[class*="container"] div{
+        width: 90% !important;
+    }
+
+    #about div[class*="container"]{
+        padding-top: 5rem !important;
+    }
+
+    #hero div.banner{
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #header .navigation.on{
+        width: 50vw;
+    }
+}

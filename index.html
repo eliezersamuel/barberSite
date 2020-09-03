@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Link para AOS animate -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="./styles/reset.css">
+    <link rel="stylesheet" href="./styles/style.css">
+
+    <!-- Link para Fonts Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css"
+        integrity="sha512-q3eWabyZPc1XTCmF+8/LuE1ozpg5xxn7iO89yfSOd5/oKvyqLngoNGsx8jq92Y8eXJ/IRxQbEC+FGSYxtk2oiw=="
+        crossorigin="anonymous" 
+    />
+
+    <title>Barbearia Ant5</title>
+</head>
+<body>
+    <!-- ======= Header ======= -->
+    <header id="header">
+
+        <div class="logo">
+            <a href="#">
+                <h1>Logotipo</h1>
+            </a>
+        </div>
+
+        <div class="menu">
+            <h2>menu</h2>
+            <i class="fa fa-bars"></i>
+        </div>
+
+        <div class="navigation">
+            <nav>
+                <i class="fas fa-times" onclick="botaoSair()"></i>
+                <ul>
+                    <li><a href="#welcome" onclick="botaoSair()">Home</a></li>
+                    <li><a href="#about" onclick="botaoSair()">Sobre</a></li>
+                    <li><a href="#services" onclick="botaoSair()">Serviços</a></li>
+                    <li><a href="#contatos" onclick="botaoSair()">Contatos</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        
+    </header>
+
+    <!-- ======= Social Icons Section ======= -->
+    <section id="sci">
+        <ul>
+            <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+            <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+            <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+        </ul>
+    </section>
+    
+    <!-- ======= Hero Section ======= -->
+    <section id="hero">
+        <div class="banner">
+            <h2>Barbearia <br/><span>Ant5</span></h2>
+            <a href="#welcome">Saiba mais</a>
+        </div>
+    </section>
+
+    <!-- ======= Welcome Section ======= -->
+    <section id="welcome">
+        <h1 class="section-title" data-aos="fade-up">Bem Vindo</h1>
+
+        <div class="welcome-container">
+            <div class="welcome-description" data-aos="fade-right">
+                <p>Bem vindo a uma experiência totalmente diferente na forma de cortar e tratar seu cabelo e barba.</p>
+                <p>Com a nossa ajuda você produzirá efeitos totalmente novos, estilos próprios, e sentirá melhor com o que vê no espelho.</p>
+                <p>Contamos com os melhores profissionais, mais bem qualificados, e com os melhores produtos do mercado<br/> 
+                para dar aquela mudanção no visual que você tanto quer.</p>
+            </div>
+
+            <div class="imagem">
+                <img src="./assets/img/equipamentos.jpg" alt="Equipamentos utilizados no corte de cabelo" cover no-repeat data-aos="fade-left">
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ======= About Section ======= -->
+    <section id="about">
+        <h1 class="section-title" data-aos="fade-up">Sobre</h1>
+
+        <div class="about-container">
+            <div class="imagem">
+                <img src="./assets/img/cadeiras.jpg" alt="Cadeiras utilizadas para o corte de cabelo" cover no-repeat data-aos="fade-right">
+            </div>
+
+            <div class="about-description" data-aos="fade-left">
+                <p>Bem vindo a uma experiência totalmente diferente na forma de cortar e tratar seu cabelo e barba.</p>
+                <p>Com a nossa ajuda você produzirá efeitos totalmente novos, estilos próprios, e sentirá melhor com o que vê no espelho.</p>
+                <p>Contamos com os melhores profissionais, mais bem qualificados, e com os melhores produtos do mercado<br/> 
+                para dar aquela mudanção no visual que você tanto quer.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ======= Services Section ======= -->
+    <section id="services">
+        <h1 class="section-title" data-aos="fade-up">Serviços</h1>
+
+        <div class="services-container">
+            <div class="services-description" data-aos="fade-right">
+                <p>Bem vindo a uma experiência totalmente diferente na forma de cortar e tratar seu cabelo e barba.</p>
+                <p>Com a nossa ajuda você produzirá efeitos totalmente novos, estilos próprios, e sentirá melhor com o que vê no espelho.</p>
+                <p>Contamos com os melhores profissionais, mais bem qualificados, e com os melhores produtos do mercado<br/> 
+                para dar aquela mudanção no visual que você tanto quer.</p>
+            </div>
+
+            <div class="imagem">
+                <img src="./assets/img/poltrona.jpg" alt="Poltrona de corte de cabelo" cover no-repeat data-aos="fade-left">
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ======= Contatos Section ======= -->
+    <section id="contatos">
+        <h1 class="section-title" data-aos="fade-up">Contatos</h1>
+
+        <div class="contatos-container">
+
+            <div class="contatos-description" data-aos="fade-right">
+
+                <div>
+                    <i class="fas fa-map-marker-alt"></i>
+                    <p>R. Maria das Dores Dias, 629 <br/> Santa Mônica <br/> Uberlândia, MG</p>
+                </div>
+
+                <div>
+                    <i class="fas fa-phone"></i>
+                    <p>(34) 3014-7812</p>
+                </div>
+
+            </div>
+
+            <div class="map" data-aos="fade-left">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1887.172959625532!2d-48.251950314654984!3d-18.916076749390562!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94a44576fe510d67%3A0x28f94fc2c7dd4083!2sBarbearia%20Ant5!5e0!3m2!1spt-BR!2sbr!4v1599064504347!5m2!1spt-BR!2sbr"
+                    width="100%"
+                    height="auto"
+                    frameborder="0"
+                    style="border:0;"
+                    allowfullscreen="true"
+                    aria-hidden="false"
+                    tabindex="0">
+                </iframe>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- ======= Back to Menu Icon ======= -->
+    <a href="#" class="back-to-top" onclick="backToMenu()"><i class="fas fa-angle-up"></i></a>
+    
+    <footer id="footer">
+        <h1 class="dev">Desenvolvido por <a href="http://www.eliezer.dev.br" target="_blank">www.eliezer.dev.br</a></h1>
+    </footer>
+
+    <!-- ======= Scripts ======= -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+    <script src="./scripts/script.js"></script>
+</body>
+</html>
