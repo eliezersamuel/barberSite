@@ -637,4 +637,12 @@ section div .map{
     #header .navigation.on{
         width: 50vw;
     }
+
+    #header .menu h2{
+        display: none;
+    }
+
+    #header .menu i{
+        transform: scale(1.8);
+    }
 }
