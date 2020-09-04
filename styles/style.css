@@ -622,6 +622,10 @@ section div .map{
         padding-top: 5rem !important;
     }
 
+    #hero{
+        background-position: center;
+    }
+
     #hero div.banner{
         display: flex;
         flex-direction: column;
