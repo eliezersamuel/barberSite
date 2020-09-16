@@ -108,7 +108,8 @@ header.sticky{
     height: 70vh;
     width: 30vw;
 
-    background: rgba(14, 5, 4 , .95);
+    background: rgba(14, 5, 4 , .85);
+    backdrop-filter: blur(1rem);
 
     border-radius: 1rem;
 
